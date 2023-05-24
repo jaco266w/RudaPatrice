@@ -17,13 +17,16 @@
       body {
         font-family: system-ui, sans-serif;
         line-height: 1.6;
+        
         color: var(--main-text-color);
-      
         background-color: var(--main-color);
       }
-      
-       
-      
+
+      main {
+        max-width: 1600px;
+        margin: auto;
+      }
+
       /* Normalisering af billeder */
       img {
         width: 100%;
@@ -188,9 +191,7 @@
           @media (min-width: 600px) {
       
               /* -------------------- Header ---------------------- */
-                header {
-                    position: unset;
-                }
+               
 
               nav {
                   display: grid;
