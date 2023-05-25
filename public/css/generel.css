@@ -51,6 +51,11 @@
       ul {
         list-style: none;
       }
+
+      .margin {
+        margin-left: 40px;
+        margin-right: 40px;
+      }
       
       /* -------------------- Header ---------------------- */
         header {
@@ -125,7 +130,8 @@
               display: flex;
               flex-direction: column;
               gap: 40px;
-      
+
+              margin-top: 60px;
               padding: 15px;
               background-color: var(--secondary-color);
       
@@ -192,6 +198,11 @@
       
           /* ---------------- Responsivitet ----------------- */
           @media (min-width: 600px) {
+
+            .margin {
+              margin-left: 80px;
+              margin-right: 80px;
+            }
       
               /* -------------------- Header ---------------------- */
                
