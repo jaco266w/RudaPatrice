@@ -1,0 +1,49 @@
+---
+
+---
+
+<article class="margin">
+    <img src="/img/hwwfront.webp" alt="">
+    <div>
+      <h2>How We Work</h2>
+      <p>Qui in minim ex tempor labore. Consectetur laboris et eiusmod amet esse nulla commodo cupidatat. Sit veniam enim ut irure nulla ad. Adipisicing Lorem sunt minim laboris ipsum. Ea ipsum reprehenderit duis voluptate. Proident incididunt enim pariatur nulla Lorem qui incididunt velit commodo duis. Officia tempor aliquip sint pariatur sit nostrud Lorem occaecat consectetur cillum esse officia labore proident. Nostrud ex non sunt pariatur quis dolore ut. Et nostrud ut magna Lorem minim amet ullamco reprehenderit qui magna velit. Lorem incididunt sint commodo ut Lorem laboris in proident duis excepteur. Lorem reprehenderit dolore duis aliqua aliquip ullamco Lorem labore reprehenderit.</p>
+      <a href="ourmaterials.astro">Our Materials</a>
+    </div>
+  </article>
+
+  <style>
+    article {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
+
+  h2 {
+    margin-bottom: 30px;
+  }
+
+  p {
+    margin-bottom: 40px;
+  }
+
+  a {
+    padding: 20px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 600px) {
+
+    article {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 80px;
+    }
+
+    div {
+      max-width: 650px;
+      align-self: center;
+    }
+  }
+  </style>
