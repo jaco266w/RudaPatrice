@@ -7,20 +7,22 @@ import Banner from '../components/Banner.astro';
 ---
 
 <MainLayout title="Gardens">
-    <div class="space" />
-    <h1>Show Us Your Gardens</h1>
-    <JoinEvent />
-    <DidYouKnow />
-    <article>
-        <p>OUR COMMUNITY THROUGH INSTAGRAM</p>
-        <h3>SHOW US WHICH ITEM ARE OUR FAVORITE ONES?</h3>
-        <div class="shelf">
-            <Card_YourFave src="/img/fave_1.webp" name="@Paw_svendsen" line="A beer in the King's garden wearing my favourite brand" />
-            <Card_YourFave src="/img/fave_2.webp" name="@Maria_andersen" line="I used my mint plant to make a jucie, so fresh #rudapatriceshowyourgarden" />
-            <Card_YourFave src="/img/fave_3.webp" name="@Monica _khoury" line="To an event at Ruda Patrice - CHEERS" />
-        </div>
-    </article>
-    <Banner />
+    <main>
+        <div class="space" />
+        <h1>Show Us Your Gardens</h1>
+        <JoinEvent />
+        <DidYouKnow />
+        <article>
+            <p>OUR COMMUNITY THROUGH INSTAGRAM</p>
+            <h3>SHOW US WHICH ITEM ARE OUR FAVORITE ONES?</h3>
+            <div class="shelf">
+                <Card_YourFave src="/img/fave_1.webp" name="@Paw_svendsen" line="A beer in the King's garden wearing my favourite brand" />
+                <Card_YourFave src="/img/fave_2.webp" name="@Maria_andersen" line="I used my mint plant to make a jucie, so fresh #rudapatriceshowyourgarden" />
+                <Card_YourFave src="/img/fave_3.webp" name="@Monica _khoury" line="To an event at Ruda Patrice - CHEERS" />
+            </div>
+        </article>
+        <Banner />
+    </main>
 </MainLayout>
 
 <style>
