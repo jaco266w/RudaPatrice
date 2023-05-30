@@ -1,0 +1,27 @@
+---
+const {Image} = Astro.props;
+const {Name} = Astro.props;
+const {Price} = Astro.props;
+---
+
+<article>
+    <a href="">
+        <img src={Image} alt="Model med Produktet">
+        <h4>{Name}</h4>
+        <p>DKK {Price}</p>
+    </a>
+</article>
+
+<style>
+
+    h4 {
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        text-align: center;
+    }
+
+</style>

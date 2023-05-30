@@ -27,6 +27,15 @@ import Banner from '../components/Banner.astro';
 
 <style>
 
+    .space {
+       height: 70px;
+   }
+
+   h1 {
+       text-align: center;
+       margin-bottom: 25px;
+   }
+
     article {
         background-color: var(--secondary-color);
         padding: 40px;
@@ -49,33 +58,19 @@ import Banner from '../components/Banner.astro';
     
     @media (min-width: 600px) {
 
+        .space {
+            height: 160px;
+        }
         article {
             padding: 120px;
         }
-
-
+        
+        
         .shelf {
             flex-direction: row;
             gap: 100px;
         }
+        
     }
 
-
-
-
-     .space {
-        height: 70px;
-    }
-
-    h1 {
-        text-align: center;
-        margin-bottom: 25px;
-    }
-
-   
-    @media (min-width: 600px) {
-        .space {
-            height: 160px;
-        }
-    }
 </style>
