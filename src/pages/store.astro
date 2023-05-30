@@ -6,10 +6,6 @@ import CardItemStock from '../components/CardItemStock.astro';
 const url = "https://ddfghjewycntqcnvdpwb.supabase.co/rest/v1/Item";
 const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRkZmdoamV3eWNudHFjbnZkcHdiIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ3NDE2MTEsImV4cCI6MjAwMDMxNzYxMX0.QDdzYHa06Ihu_Ai3vPFMaU6XKWgtNmejT-bbgcZ2Z4A";
 
-const urlParams = new URLSearchParams(window.location.search);
-  const drop = urlParams.get("drop");
-  console.log(drop);
-
 
 const response = await fetch(url,{
 	method: "GET",
@@ -143,7 +139,8 @@ const items = await response.json();
 </style>
 
 <script>
-  
-
+  const urlParams = new URLSearchParams(window.location.search);
+  const drop = urlParams.get("drop");
+  console.log(drop);
   
 </script>
