@@ -47,9 +47,22 @@
     color: var(--third-text-color);
   }
 
+  a:hover {
+    text-decoration: none;
+  }
+
+  a:hover p {
+    transform: scale(1.02);
+    transition: 0.2s;
+  }
+
   @media (min-width: 600px) {
     #hero {
         flex-direction: row;
+    }
+
+    #hero div p {
+      font-size: 3.5rem;
     }
   }
   </style>
