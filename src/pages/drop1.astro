@@ -3,7 +3,7 @@ import MainLayout from '../layout/MainLayout.astro';
 import CardItem from '../components/CardItem.astro';
 import CardItemStock from '../components/CardItemStock.astro';
 
-const url = "https://ddfghjewycntqcnvdpwb.supabase.co/rest/v1/Item";
+const url = "https://ddfghjewycntqcnvdpwb.supabase.co/rest/v1/Item?drop1=is.true";
 const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRkZmdoamV3eWNudHFjbnZkcHdiIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ3NDE2MTEsImV4cCI6MjAwMDMxNzYxMX0.QDdzYHa06Ihu_Ai3vPFMaU6XKWgtNmejT-bbgcZ2Z4A";
 
 
@@ -20,7 +20,7 @@ const response = await fetch(url,{
 const items = await response.json();
 ---
 
-<MainLayout title="Store">
+<MainLayout title="Drop1">
     <main>
         <div class="space" />
         <h1>Drops</h1>
@@ -38,7 +38,7 @@ const items = await response.json();
               <img src="/img/drop3.webp" alt="Billede af drop">
             </a>
         </div>
-        <h2 id="items" class="margin">Shop All</h2>
+        <h2 id="items" class="margin">Drop 1</h2>
         <div class="shelf margin">
           {
             items.map((item) => {
