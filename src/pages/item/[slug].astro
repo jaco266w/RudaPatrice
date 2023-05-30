@@ -1,0 +1,29 @@
+---
+import MainLayout from "../../layout/MainLayout.astro";
+
+export async function getStaticPaths() {
+    const url = "https://ddfghjewycntqcnvdpwb.supabase.co/rest/v1/Item";
+    const options = {
+        headers: {
+            apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRkZmdoamV3eWNudHFjbnZkcHdiIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ3NDE2MTEsImV4cCI6MjAwMDMxNzYxMX0.QDdzYHa06Ihu_Ai3vPFMaU6XKWgtNmejT-bbgcZ2Z4A"
+        },
+    };
+    const response = await fetch(url, options);
+    const data = await response.json();
+
+    return data.map((item) => ({
+        params: { slug: item.slug },
+        props: { item },
+    }));
+}
+
+const { item } = Astro.props;
+---
+<MainLayout title={item.Name}>
+    <main>
+        <img src={item.Image} alt="Model med Ruda Patrice produkt">
+        <h1>{item.Name}</h1>
+        <p>{item.Price}</p>
+        <p>{item.Description}</p>
+    </main>
+</MainLayout>

@@ -1,12 +1,9 @@
 ---
-const {Image} = Astro.props;
-const {Name} = Astro.props;
-const {Price} = Astro.props;
-
+const {Link, Image, Name, Price} = Astro.props;
 ---
 
 <article>
-    <a href="">
+    <a href={Link}>
         <div class="billede">
             <div class="">
                 <p>Out Of Stock</p>
