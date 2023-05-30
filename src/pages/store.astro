@@ -1,6 +1,7 @@
 ---
 import MainLayout from '../layout/MainLayout.astro';
 import CardItem from '../components/CardItem.astro';
+import CardItemStock from '../components/CardItemStock.astro';
 
 
 const url = "https://ddfghjewycntqcnvdpwb.supabase.co/rest/v1/Item";
@@ -43,7 +44,13 @@ const items = await response.json();
         <div class="shelf margin">
           {
             items.map((item) => {
-              return <CardItem Image = {item.Image} Name = {item.Name} Price = {item.Price} />
+              if(item.Instock == false) {
+                return <CardItem Image = {item.Image} Name = {item.Name} Price = {item.Price} />
+              }
+              else {
+                return <CardItemStock Image = {item.Image} Name = {item.Name} Price = {item.Price} />
+              }
+              
             })
           }
         </div>
@@ -52,7 +59,7 @@ const items = await response.json();
 
 <style>
     
-
+    
      .space {
        height: 70px;
    }
@@ -113,8 +120,12 @@ const items = await response.json();
 
   @media (min-width: 600px) {
     .space {
-            height: 160px;
+            height: 140px;
         }
+
+    h2 {
+      margin-top: 80px;
+    }
 
     .card_shelf {
       max-width: 1400px;
@@ -128,3 +139,7 @@ const items = await response.json();
     }
   }
 </style>
+
+<script>
+    
+</script>

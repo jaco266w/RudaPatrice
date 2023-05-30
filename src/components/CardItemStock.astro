@@ -8,7 +8,7 @@ const {Price} = Astro.props;
 <article>
     <a href="">
         <div class="billede">
-            <div class="">
+            <div class="skjul">
                 <p>Out Of Stock</p>
             </div>
             <img src={Image} alt="Model med Produktet">
@@ -33,6 +33,11 @@ const {Price} = Astro.props;
     a:hover {
         text-decoration: none;
     }
+
+    .skjul {
+        display: none;
+    }
+
     .billede {
         display: grid;
         grid-template-columns: 1fr;
