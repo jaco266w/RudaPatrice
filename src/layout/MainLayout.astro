@@ -10,6 +10,8 @@ const {title} = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<link rel="stylesheet" href="https://use.typekit.net/msv0dhm.css">
 		<link rel="stylesheet" href="/css/generel.css">
+		<script is:inline src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+		<script is:inline src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
 		<title>{title}</title>
 	</head>
 	<body>
@@ -22,7 +24,7 @@ const {title} = Astro.props;
 					<li><a href="/ourMaterials">Our Materials</a></li>
 					<li><a href="/yourGarden">Your Garden</a></li>
 				</ul>
-				<img class="burger-menu-button" id="burger" src="/icon/bars.svg" alt="Burger Menu">
+				<lottie-player class="burger-menu-button" id="burger" speed="4" src="https://assets6.lottiefiles.com/packages/lf20_pDIAHc.json"></lottie-player>
 				<ul class="menu-list">
 				  <li><a href="/store">Store</a></li>
 				  <li><a href="/about">About Us</a></li>
@@ -92,5 +94,15 @@ const {title} = Astro.props;
         icon.style.bottom = "20px";
       }
     });
+
+	LottieInteractivity.create({
+    player:'#burger',
+    mode:"cursor",
+    actions: [
+        {
+            type: "toggle"
+        }
+]
+});
   </script>
 
