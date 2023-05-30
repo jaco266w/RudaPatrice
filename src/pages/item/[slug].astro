@@ -21,9 +21,109 @@ const { item } = Astro.props;
 ---
 <MainLayout title={item.Name}>
     <main>
-        <img src={item.Image} alt="Model med Ruda Patrice produkt">
-        <h1>{item.Name}</h1>
-        <p>{item.Price}</p>
-        <p>{item.Description}</p>
+        <div class="space" />
+        <section class="margin">
+            <img src={item.Image} alt="Model med Ruda Patrice produkt">
+            <div>
+                <h1>{item.Name}</h1>
+                <p id="price">DKK {item.Price}</p>
+                <div id="wrapper_size">
+                    <label for="sizes">SIZE:</label>
+                    <select name="sizes" id="sizes">
+                        <option value="">SELECT SIZE</option>
+                        <option value="extra small">EXTRA SMALL</option>
+                        <option value="small">SMALL</option>
+                        <option value="medium">MEDIUM</option>
+                        <option value="large">LARGE</option>
+                        <option value="extra large">EXTRA LARGE</option>
+                    </select>
+                </div>
+                <button>Add To Cart</button>
+                <p id="description">{item.Description}</p>
+            </div>
+        </section>
     </main>
 </MainLayout>
+
+<style>
+     .space {
+       height: 70px;
+   }
+
+   section {
+    display: flex;
+    flex-direction: column;
+   }
+
+   img {
+        height: max-content;
+       max-height: 600px;
+   }
+
+   h1 {
+       font-size: 2rem;
+       margin-bottom: 20px;
+   }
+
+    #price {
+         font-size: 1.5rem;
+         font-weight: 700;
+         margin-bottom: 20px;
+    }
+
+    #wrapper_size {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    select {
+        background-color: transparent;
+        border: 1px solid black;
+        border-radius: 0px;
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    button {
+        width: 100%;
+        background-color: transparent;
+        border: 1px solid black;
+        border-radius: 0px;
+        padding: 10px;
+        margin-bottom: 40px;
+        font-size: 1rem;
+        color: black;
+    }
+
+    button:hover {
+        background-color: black;
+        color: white;
+    }
+
+    #description {
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.5rem;
+    }
+
+   @media (min-width: 600px) {
+    .space {
+            height: 140px;
+        }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 50px;
+
+        max-width: 1000px;
+    }
+   }
+</style>
