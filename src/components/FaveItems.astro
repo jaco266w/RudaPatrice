@@ -76,17 +76,20 @@ const items = await response.json();
         display: flex;
         flex-direction: column;
         align-items: center;
+        
     }
 
     .center {
         text-align: center;
         margin-bottom: 10px;
+        font-weight: 100;
+        font-size: 1rem;
     }
    
     .card {
         background-color: var(--third-color);
         padding: 20px;
-        width: 80%;
+        width: 60%;
     }
 
     @media (min-width: 600px) {
@@ -114,11 +117,7 @@ const items = await response.json();
         }
 
         .shelf div {
-            align-items: flex-start;
-        }
-
-        .card {
-            
+            align-items: center;
         }
 
         

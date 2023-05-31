@@ -22,6 +22,7 @@ const { item } = Astro.props;
 <MainLayout title={item.Name}>
     <main>
         <div class="space" />
+        <button onclick="history.back()" class="back margin">&#8592;  Back</button>
         <section class="margin">
             <img src={item.Image} alt="Model med Ruda Patrice produkt">
             <div>
@@ -38,7 +39,7 @@ const { item } = Astro.props;
                         <option value="extra large">EXTRA LARGE</option>
                     </select>
                 </div>
-                <button>Add To Cart</button>
+                <button class="atc">Add To Cart</button>
                 <p id="description">{item.Description}</p>
             </div>
         </section>
@@ -48,6 +49,18 @@ const { item } = Astro.props;
 <style>
      .space {
        height: 70px;
+   }
+
+   .back {
+        background-color: transparent;
+        background-color: transparent;
+        border: 1px solid black;
+        border-radius: 0px;
+        padding: 10px;
+        margin-bottom: 20px;
+        font-size: 1rem;
+        color: black;
+        place-self: flex-start;
    }
 
    section {
@@ -85,7 +98,7 @@ const { item } = Astro.props;
         font-size: 1rem;
     }
 
-    button {
+    .atc {
         width: 100%;
         background-color: transparent;
         border: 1px solid black;
@@ -116,14 +129,14 @@ const { item } = Astro.props;
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        max-width: 1200px;
     }
 
     section {
         flex-direction: row;
         justify-content: space-between;
         gap: 50px;
-
-        max-width: 1000px;
     }
    }
 </style>
