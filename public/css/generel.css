@@ -98,7 +98,6 @@
       
           nav {
               display: flex;
-      
               flex-wrap: wrap;
               column-gap: 100px;
               align-items: center;
@@ -116,6 +115,7 @@
               text-decoration: none;
               color: var(--main-text-color);
               text-transform: uppercase;
+              font-size: 1.2rem;
           }
       
           nav a:hover {
@@ -152,6 +152,7 @@
               margin: auto;
               display: flex;
               flex-direction: column;
+              gap: 10px;
               align-items: center;
               list-style: none;
             }
