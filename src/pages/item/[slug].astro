@@ -24,10 +24,14 @@ const { item } = Astro.props;
         <div class="space" />
         <button onclick="history.back()" class="back margin">&#8592;  Back</button>
         <section class="margin">
-            <img src={item.Image} alt="Model med Ruda Patrice produkt">
+            <div class={item.Instock === false && "container_image"}>
+                <div class={item.Instock === true && "skjul"}>
+                    <p>OUT OF STOCK</p>
+                </div>
+                <img src={item.Image} alt="Model med Ruda Patrice produkt"></div>
             <div>
-                <h1>{item.Name}</h1>
-                <p id="price">DKK {item.Price}</p>
+                <h1 class={item.Instock === false && "line"}>{item.Name}</h1>
+                <p class={item.Instock === false && "line"} id="price">DKK {item.Price}</p>
                 <div id="wrapper_size">
                     <label for="sizes">SIZE:</label>
                     <select name="sizes" id="sizes">
@@ -51,6 +55,14 @@ const { item } = Astro.props;
        height: 70px;
    }
 
+   .skjul {
+         display: none;
+   }
+
+   .line{
+    text-decoration: line-through;
+   }
+
    .back {
         background-color: transparent;
         background-color: transparent;
@@ -66,11 +78,40 @@ const { item } = Astro.props;
    section {
     display: flex;
     flex-direction: column;
+
+    /* max-height: 600px; */
+   }
+
+   .container_image {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        justify-items: center;
+        align-items: center;
+
+        max-width: 350px;
+   }
+
+   .container_image div {
+        grid-column: 1;
+        grid-row: 1;
+        z-index: 3;
+        background-color: #a5a5a590;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--third-text-color);
+        font-size: 2rem;
    }
 
    img {
-        height: max-content;
-       max-height: 600px;
+        height: 100%;
+        object-fit: contain;
+        grid-column: 1;
+        grid-row: 1;
+        z-index: 1;
    }
 
    h1 {
@@ -137,6 +178,10 @@ const { item } = Astro.props;
         flex-direction: row;
         justify-content: space-between;
         gap: 50px;
+    }
+
+    .container_image p {
+        font-size: 2rem;
     }
    }
 </style>
