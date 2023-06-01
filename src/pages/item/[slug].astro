@@ -1,6 +1,9 @@
 ---
+// Importere vores main layout
 import MainLayout from "../../layout/MainLayout.astro";
 
+
+// Her henter vi vores data fra vores database
 export async function getStaticPaths() {
     const url = "https://ddfghjewycntqcnvdpwb.supabase.co/rest/v1/Item";
     const options = {
@@ -10,7 +13,7 @@ export async function getStaticPaths() {
     };
     const response = await fetch(url, options);
     const data = await response.json();
-
+    // Her mapper vi igennem vores data og definere vores slug og props
     return data.map((item) => ({
         params: { slug: item.slug },
         props: { item },
@@ -24,6 +27,7 @@ const { item } = Astro.props;
         <div class="space" />
         <button onclick="history.back()" class="back margin">&#8592;  Back</button>
         <section class="margin">
+            <!-- hvis et item fra databasen er out of stock tilføjer klassen container_image som gør at billedet bliver vist som out of stock -->
             <div class={item.Instock === false && "container_image"}>
                 <div class={item.Instock === true && "skjul"}>
                     <p>OUT OF STOCK</p>

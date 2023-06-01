@@ -1,9 +1,12 @@
 ---
+// Importerer CardItemFave komponenten
 import CardItemFave from '../components/CardItemFave.astro'
+
+// Definere URL og API key som vi skal bruge til at hente data fra Supabase
 const url = "https://ddfghjewycntqcnvdpwb.supabase.co/rest/v1/Item";
 const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRkZmdoamV3eWNudHFjbnZkcHdiIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ3NDE2MTEsImV4cCI6MjAwMDMxNzYxMX0.QDdzYHa06Ihu_Ai3vPFMaU6XKWgtNmejT-bbgcZ2Z4A";
 
-
+// Henter data fra Supabase
 const response = await fetch(url,{
 	method: "GET",
 	headers: {
@@ -24,6 +27,7 @@ const items = await response.json();
         <div>
             <p class="center">Patrick & Daniels FAVORITE ITEM</p>
             <div class="card">
+                <!-- mapper igennem data og viser et produkt hvis det er klassificeret som en favorit i supabase. favoritten bliver vist på baggrund af komponenten CardItemFave -->
                 {
                     items.map((item) => {
                         if(item.Fave == true) {

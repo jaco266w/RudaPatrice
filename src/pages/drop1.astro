@@ -1,12 +1,14 @@
 ---
+// Definere astro props så de kan bruges i html
 import MainLayout from '../layout/MainLayout.astro';
 import CardItem from '../components/CardItem.astro';
 import CardItemStock from '../components/CardItemStock.astro';
 
+// Definere url og key til supabase
 const url = "https://ddfghjewycntqcnvdpwb.supabase.co/rest/v1/Item?drop1=is.true";
 const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRkZmdoamV3eWNudHFjbnZkcHdiIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ3NDE2MTEsImV4cCI6MjAwMDMxNzYxMX0.QDdzYHa06Ihu_Ai3vPFMaU6XKWgtNmejT-bbgcZ2Z4A";
 
-
+// Henter data fra supabase
 const response = await fetch(url,{
 	method: "GET",
 	headers: {
@@ -40,8 +42,10 @@ const items = await response.json();
         </div>
         <h2 id="items" class="margin">Drop 1</h2>
         <div class="shelf margin">
+          <!-- mapper igennem data og tjekker for om et produkt er in stock eller ej -->
           {
             items.map((item) => {
+              // hvis et produkt ikke er in stock, så vises det ikke
               if(item.Instock == false) {
                 return <CardItem
                 Link = {"/item/" + item.slug} 
@@ -51,6 +55,7 @@ const items = await response.json();
                 />
               }
               else {
+              // hvis et produkt er in stock, så vises det
                 return <CardItemStock
                 Link = {"/item/" + item.slug} 
                 Image = {item.Image} 
