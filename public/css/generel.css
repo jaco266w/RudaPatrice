@@ -84,7 +84,8 @@
         list-style: none;
       }
 
-      button {
+      button,
+      select {
         color: var(--secondary-text-color);
       }
 
