@@ -84,6 +84,10 @@
         list-style: none;
       }
 
+      button {
+        color: var(--secondary-text-color);
+      }
+
       .margin {
         margin-left: 40px;
         margin-right: 40px;
